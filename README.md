@@ -66,3 +66,26 @@ Response:
 label: "Racista" ou "Não racista"
 
 score: probabilidade da classificação
+
+💻 Exemplo de uso com Node.js / TypeScript
+
+import axios from "axios";
+
+async function classifyText(text: string) {
+  const res = await axios.post("http://127.0.0.1:8000/classify", { text });
+  console.log(res.data);
+}
+
+classifyText("comentário teste");
+
+⚠️ Observações
+
+A primeira execução baixa o modelo do Hugging Face, pode demorar alguns segundos.
+
+Funciona offline após o download do modelo.
+
+Recomendado para uso local ou apps desktop (Electron/Tauri).
+
+📌 Referências
+
+Hugging Face - sankofa/sankofa-ai
